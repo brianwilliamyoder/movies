@@ -6,9 +6,13 @@ function Ticket(movieName, time, age) {
 }
 
 Ticket.prototype.ticketPrice = function() {
-  if (this.time  < 15) {
+  if (this.time < 15 && this.age >= 65) {
+    return "10.00";
+  } else if (this.time > 15 && this.age >= 65) {
+    return "11.00"
+  } else if (this.time < 15 && this.age < 65) {
     return "12.00";
   } else {
-    return "20.00";
+    return "20.00"
   }
-}
+} 
