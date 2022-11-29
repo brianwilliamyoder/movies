@@ -16,7 +16,7 @@ Code: newTicket.ticketPrice("The Matrix", "12", "30")
 Expected Output:
   $12.00
 
-3rd Test: Returns the price of a ticket based on time and age
+PASS 3rd Test: Returns the price of a ticket based senior discount and matinee 
 Code: newTicket.ticketPrice("The Matrix", "12", "65")
 Expected Output:
   $10.00
