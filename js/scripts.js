@@ -20,7 +20,13 @@ Ticket.prototype.ticketPrice = function() {
 
 //User Interface Logic
 
-function displayPrice()
+function displayPrice(ticketPrice) {
+  let priceDiv = document.querySelector("div#displayPrice");
+  priceDiv.innerText = null;
+  let p = document.createElement("p");
+  p.append(ticketPrice);
+  priceDiv.append(p);
+}
 
 function handleFormSubmission(event) {
   event.preventDefault();
@@ -28,6 +34,10 @@ function handleFormSubmission(event) {
   const timeSelection = document.getElementById("times").value;
   const ageSelection = document.getElementById("age").value;
   let newTicket = new Ticket(movieSelection, timeSelection, ageSelection);
-  newTicket.ticketPrice();
-
+  let ticketPrice = newTicket.ticketPrice();
+  displayPrice(ticketPrice);
 }
+
+window.addEventListener("load", function() {
+  document.querySelector("form").addEventListener("submit", handleFormSubmission)
+});
